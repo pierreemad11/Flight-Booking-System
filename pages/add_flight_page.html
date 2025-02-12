@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Flight</title>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-image: url('../images/Company_background.png'); 
+        background-size: cover; 
+        background-repeat: no-repeat; 
+        background-position: center; 
+        height: 100vh; 
+      }
+  </style>
+</head>
+
+<body>
+  <form method="post" action="../php/add_flights.php">
+    <h2>Add Flight</h2>
+
+    <label for="flightName">Flight Name:</label>
+    <input type="text" id="flightName" name="flightName" required>
+
+    <label for="flightDeparture">Departure (From):</label>
+    <input type="text" id="flightDeparture" name="flightDeparture" required>
+
+    <label for="flightDestination">Destination (To):</label>
+    <input type="text" id="flightDestination" name="flightDestination" required>
+
+    <label for="flightStops">Stops (comma separated):</label>
+    <input type="text" id="flightStops" name="flightStops">
+
+    <label for="flightFees">Fees:</label>
+    <input type="number" id="flightFees" name="flightFees" step="0.01" required>
+
+    <label for="passengersNumber">Number of Passengers:</label>
+    <input type="number" id="passengersNumber" name="passengersNumber" min="1" required>
+
+    <label for="flightStartTime">Start Time:</label>
+    <input type="datetime-local" id="flightStartTime" name="flightStartTime" required>
+
+    <label for="flightEndTime">End Time:</label>
+    <input type="datetime-local" id="flightEndTime" name="flightEndTime" required>
+
+    
+
+    <button type="submit">Add Flight</button>
+  </form>
+
+</body>
+
+</html>

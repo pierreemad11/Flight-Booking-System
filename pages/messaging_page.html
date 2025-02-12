@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Send Message</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 80%;
+            max-width: 400px;
+            height: 100px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 8px;
+            resize: vertical;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script> // de 34an el company id fl url lw msh mwgood 
+        function setCompanyIdFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const companyId = urlParams.get("company_id"); 
+            
+            if (!companyId) {
+                alert("No valid company_id in URL! Redirecting...");
+                window.location.href = "passenger_home.php";
+                return;
+            }
+
+            document.getElementById("receiver_company_id").value = companyId;
+        }
+    </script>
+</head>
+<body onload="setCompanyIdFromUrl()">
+
+<div class="container">
+    <h1>Message the Company</h1>
+    
+    <form action="../php/send_message.php" method="post">
+        
+        <!-- Hidden field to store which company is receiving the message -->
+        <input  type="hidden"  name="receiver_company_id"   id="receiver_company_id"  value="">
+
+        <textarea  name="message"  placeholder="Type your message here..."  required ></textarea>
+        <br>
+        <button type="submit">Send</button>
+    </form>
+
+    <a href="../php/passenger_home.php">Back to Passenger Home</a>
+</div>
+
+</body>
+</html>

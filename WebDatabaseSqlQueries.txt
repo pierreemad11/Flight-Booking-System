@@ -1,0 +1,54 @@
+CREATE TABLE `company` (
+  `company_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `bio` text DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `location` varchar(255) DEFAULT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `tel` varchar(15) DEFAULT NULL,
+  `logo_img` varchar(255) DEFAULT NULL,
+  `account_balance` decimal(10,2) DEFAULT 0.00
+)
+
+CREATE TABLE `flight` (
+  `flight_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `departure` varchar(255) NOT NULL,
+  `destination` varchar(255) NOT NULL,
+  `stops` varchar(255) DEFAULT NULL,
+  `fees` decimal(10,2) NOT NULL,
+  `passengers_number` int(250) NOT NULL,
+  `start_time` datetime NOT NULL,
+  `end_time` datetime NOT NULL,
+  `company_id` int(11) NOT NULL,
+  `is_completed` tinyint(1) DEFAULT 0
+)
+
+CREATE TABLE `message` (
+  `message_id` int(11) NOT NULL,
+  `sender_id` int(11) DEFAULT NULL,
+  `receiver_id` int(11) DEFAULT NULL,
+  `content` text DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+)
+
+CREATE TABLE `passenger` (
+  `passenger_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `tel` varchar(15) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `passport_img` varchar(255) DEFAULT NULL,
+  `account_balance` decimal(10,2) DEFAULT 10000.00
+)
+
+CREATE TABLE `passenger_flight` (
+  `passenger_id` int(11) NOT NULL,
+  `flight_id` int(11) NOT NULL,
+  `status` enum('pending','completed','canceled') DEFAULT 'pending',
+  `payment_status` enum('pending','completed') NOT NULL DEFAULT 'pending'
+)
+

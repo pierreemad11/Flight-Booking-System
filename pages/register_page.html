@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page</title>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<style>
+  body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('../images/login.png'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  height: 100vh; 
+}
+  form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 500px; 
+    align-content: center;
+    max-height: 80vh; 
+    overflow-y: auto; 
+}
+
+  textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    resize: vertical; 
+  }
+
+</style>
+
+
+<body>
+  <form method="post" action="../php/register.php" id="registrationForm" enctype="multipart/form-data">
+    <h2>Register</h2>
+
+    <label for="userType">User Type:</label>
+    <select id="userType" name="userType" onchange="toggleUserTypeInfo()" required>
+      <option value="" disabled selected>Select User Type</option>
+      <option value="company">Company</option>
+      <option value="passenger">Passenger</option>
+    </select>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" >
+
+    <label for="telephone">Telephone:</label>
+    <input type="tel" id="telephone" name="telephone" required>
+
+    <!-- Company-specific information -->
+    <div class="user-type-info" id="companyInfo" style="display: none;">
+      <label for="company_name">Company Name:</label>
+      <input type="text" id="company_name" name="company_name">
+
+      <label for="bio">Bio:</label>
+      <textarea id="bio" name="bio" rows="3"></textarea>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address">
+
+      <label for="location">Location (optional):</label>
+      <input type="text" id="location" name="location">
+
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" >
+
+ <!-- <label for="accountbalance">account Balance:</label>
+      <input type="text" id="account_balance" name="account_balance" > -->
+
+      <label for="logo">Company Logo:</label>
+      <input type="file" id="logo" name="logo" accept="image/*">
+    </div>
+
+    <!-- Passenger-specific information -->
+    <div class="user-type-info" id="passportInfo" style="display: none;">
+      <label for="photo">Photo:</label>
+      <input type="file" id="photo" name="photo" accept="image/*">
+
+      <label for="passportImage">Passport Image:</label>
+      <input type="file" id="passportImage" name="passportImage" accept="image/*">
+    </div>
+
+    <button type="submit">Register</button>
+
+    <div class="login-link">
+      <p>
+        Already have an account? <br>
+        <a href="login_page.html">Login here</a>
+      </p>
+    </div>
+  </form>
+
+  <script>
+    function toggleUserTypeInfo() {
+      var userType = document.getElementById("userType").value;
+      var companyInfo = document.getElementById("companyInfo");
+      var passportInfo = document.getElementById("passportInfo");
+
+      if (userType === "company") {
+        companyInfo.style.display = "block";
+        passportInfo.style.display = "none";
+      } else {
+        companyInfo.style.display = "none";
+        passportInfo.style.display = "block";
+      }
+    }
+  </script>
+
+
+</body>
+
+</html>
