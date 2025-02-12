@@ -1,3 +1,38 @@
+# ✈️ Flight Booking Website
+
+## 🚀 Overview
+A comprehensive flight booking system for **Companies (Airlines)** and **Passengers**, managing flights, bookings, and profiles seamlessly.
+
+## 🏢 Company Features
+- Manage flights & passengers
+- Profile management
+- Messaging system
+- Financial transactions
+
+## 🛫 Passenger Features
+- Book & manage flights
+- Profile customization
+- Flight search & booking
+- Messaging with companies
+
+## 📅 Flight Details
+- Itinerary, passengers, fees, and schedule
+- Booking status (completed/pending)
+- Payment options (Account balance or Cash)
+
+## 🔥 Key Pages
+1️⃣ **Register & Login** - Sign up as a company or passenger  
+2️⃣ **Company Dashboard** - Manage flights & messages  
+3️⃣ **Passenger Dashboard** - Track flights & search flights  
+4️⃣ **Flight Details** - View itinerary & book flights  
+5️⃣ **Messaging** - Connect with companies  
+
+## 🎯 Project Delivery
+- 📌 Phase 1: Core functionalities
+- 📌 Phase 2: Additional features
+- 📌 Phase 3: Full system deployment
+
+## 🖼️ Screenshots
 # Home Page
 ![alt text](<Screenshots/Home page.png>)
 
@@ -22,3 +57,13 @@
 
 #search flight page 
 ![alt text](<Screenshots/Search flight page.png>)
+ 
+
+🚀 **Ready for takeoff!**
+
+
+
+
+
+
+
